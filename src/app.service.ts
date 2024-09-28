@@ -1,10 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import data from '../data.json'; 
-
-interface Cat {
-  subscriptionActive: boolean;
-  pouchSize: 'A' | 'B' | 'C' | 'D' | 'E' | 'F';
-}
+import { Cat } from './types'; 
 
 @Injectable()
 export class AppService {
