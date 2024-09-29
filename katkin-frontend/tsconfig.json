@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ES6", // Update to ES6 for better async/await support
+    "module": "CommonJS", // Change to CommonJS for Node.js compatibility
     "lib": [
       "dom",
       "dom.iterable",
@@ -13,7 +14,6 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -21,6 +21,7 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
+    "src", // Keep your React app source files
+    "api" // Include the directory for your Express server (change this to the actual path if needed)
   ]
 }
