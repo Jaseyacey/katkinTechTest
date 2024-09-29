@@ -36,7 +36,7 @@ app.get('/api/comms/your-next-delivery/:userId', (req: Request, res: Response) =
   res.json({
     title: `Your next delivery for ${catNames}`,
     message: `Hey ${user.firstName}! In two days' time, we'll be charging you for your next order for ${catNames}'s fresh food.`,
-    totalPrice: 25.00, 
+    totalPrice: 125.00, 
     freeGift: true,
   });
 });
