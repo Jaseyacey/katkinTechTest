@@ -14,9 +14,6 @@ export class AppController {
       throw new NotFoundException('User not found');
     }
 
-    // Log the user object to debug
-    console.log('User:', user);
-
     const activeCats = user.cats
       .filter((cat: any) => cat.subscriptionActive)
       .map((cat: any) => ({
@@ -24,10 +21,6 @@ export class AppController {
         pouchSize: cat.pouchSize as 'A' | 'B' | 'C' | 'D' | 'E' | 'F'
       })) as Cat[];
 
-    // Log the activeCats to debug
-    console.log('Active Cats:', activeCats);
-
-    // Check for missing name properties
     activeCats.forEach(cat => {
       if (!cat.name) {
         console.error('Missing name property for cat:', cat);
@@ -36,11 +29,10 @@ export class AppController {
 
     const catNames = activeCats
       .map(cat => cat.name)
-      .filter(name => name) // Filter out undefined or null names
+      .filter(name => name)
       .join(', ')
       .replace(/, ([^,]*)$/, ' and $1');
 
-    // Log the catNames to debug
     console.log('Cat Names:', catNames);
 
     const totalPrice = this.appService.calculateTotalPrice(activeCats);
@@ -49,7 +41,7 @@ export class AppController {
     return {
       title: `Your next delivery for ${catNames}`,
       message: `Hey ${user.firstName}! In two days' time, we'll be charging you for your next order for ${catNames}'s fresh food.`,
-      totalPrice: totalPrice, // Keep it as a number
+      totalPrice: totalPrice,
       freeGift,
     };
   }
