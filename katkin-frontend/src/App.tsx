@@ -44,12 +44,20 @@ const DeliveryMessage: React.FC = () => {
     <div className="relative max-w-3xl mx-auto bg-white rounded-lg p-6 mt-8 flex border border-gray-300">
       <img src={cat} alt="Cat" className="w-1/3 h-auto rounded-lg mr-4" />
       <div>
-        <h1 className="text-2xl font-bold text-gray-800 mb-4">{data?.title}</h1>
+        <h1 className="text-2xl font-bold text-green-600 mb-4">
+          {data?.title}
+        </h1>
         <p className="text-gray-700 mb-4">{data?.message}</p>
-        <p className="text-lg font-semibold text-gray-900 mb-4">Total price: <span className="text-gray-900">£{data?.totalPrice.toFixed(2)}</span></p>
+        <p className="text-lg font-bold text-gray-900 mb-4">
+          Total price: 
+        <span className="text-gray-900">£{data?.totalPrice.toFixed(2)}</span></p>
         <div className="flex justify-between">
-          <button className="bg-green-600 text-white font-bold py-2 px-4 rounded hover:bg-green-500">See Details</button>
-          <button className="bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded hover:bg-gray-200">Edit Delivery</button>
+        <button className="bg-green-600 text-white  py-2 px-12 rounded hover:bg-green-500">
+            See Details
+          </button>
+          <button className="bg-white-300 text-green-600  py-2 px-12 rounded hover:bg-gray-200 border border-green-600">
+            Edit Delivery
+          </button>
         </div>
       </div>
       {data?.freeGift && (
@@ -59,7 +67,7 @@ const DeliveryMessage: React.FC = () => {
         -translate-y-1/2 
         rotate-12 bg-pink-300 
         text-pink-800 
-        font-bold rounded-full px-2 py-1 
+        font-bold  px-2 py-1 
         text-sm">
           FREE GIFT
         </span>
